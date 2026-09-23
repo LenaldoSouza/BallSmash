@@ -2,7 +2,7 @@ extends Weapon
 
 var damage_cap: float = 5.0
 const CAP_INCREASE = 2.0
-const KNOCKBACK_MULTIPLIER = 20.0
+const KNOCKBACK_MULTIPLIER = 400.0
 
 
 func _apply_damage(body: Node2D) -> void:

@@ -4,7 +4,7 @@ var current_weapon: Weapon = null
 var owner_ball: CharacterBody2D = null
 
 const ORBIT_RADIUS = 45.0
-var rotation_speed: float = 3.0
+var rotation_speed: float = 4.0
 
 const WEAPON_SCENES: Array[PackedScene] = [
 	preload("res://armasOBJ/dagger.tscn"),

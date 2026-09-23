@@ -5,7 +5,7 @@ const ACCELERATION = 1500.0
 const FRICTION = 2000.0
 const BOUNCE_FORCE = 1
 const BALL_RADIUS = 32.0
-const MAX_HEALTH = 500
+const MAX_HEALTH = 200
 
 static var used_hues: Array[float] = []
 const MIN_HUE_DISTANCE = 0.15
@@ -82,17 +82,49 @@ func _physics_process(delta: float) -> void:
 
 func _bounce_off_screen_edges() -> void:
 	var screen_size := get_viewport_rect().size
+	var bounced := false
 
 	if global_position.x < BALL_RADIUS:
 		global_position.x = BALL_RADIUS
 		velocity.x = abs(velocity.x) * BOUNCE_FORCE
+		bounced = true
 	elif global_position.x > screen_size.x - BALL_RADIUS:
 		global_position.x = screen_size.x - BALL_RADIUS
 		velocity.x = -abs(velocity.x) * BOUNCE_FORCE
+		bounced = true
 
 	if global_position.y < BALL_RADIUS:
 		global_position.y = BALL_RADIUS
 		velocity.y = abs(velocity.y) * BOUNCE_FORCE
+		bounced = true
 	elif global_position.y > screen_size.y - BALL_RADIUS:
 		global_position.y = screen_size.y - BALL_RADIUS
 		velocity.y = -abs(velocity.y) * BOUNCE_FORCE
+		bounced = true
+
+	if bounced and is_knocked_back:
+		take_damage(1)
+		
+var poison_stacks: int = 0
+const POISON_TICK_INTERVAL = 1.0
+
+
+func apply_poison(amount: int) -> void:
+	poison_stacks += amount
+
+
+func _poison_tick_loop() -> void:
+	while health > 0:
+		await get_tree().create_timer(POISON_TICK_INTERVAL).timeout
+		if poison_stacks > 0:
+			take_damage(poison_stacks)
+
+var is_knocked_back: bool = false
+const KNOCKBACK_DURATION = 4
+
+
+func apply_knockback(direction: Vector2, force: float) -> void:
+	velocity += direction.normalized() * force
+	is_knocked_back = true
+	await get_tree().create_timer(KNOCKBACK_DURATION).timeout
+	is_knocked_back = false

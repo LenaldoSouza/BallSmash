@@ -4,4 +4,5 @@ const STRETCH_AMOUNT = 5.0
 
 
 func _on_hit(_body: Node2D) -> void:
+	damage += 1
 	position.x += STRETCH_AMOUNT

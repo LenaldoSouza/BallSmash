@@ -1,12 +1,4 @@
-res://armasOBJ/sword.tscn
-res://armasOBJ/dagger.tscn
-res://weaponholder.gd
-res://lance.gd
-res://saw.gd
-res://sickle.gd
-res://dagger.gd
-res://char.tscn
-res://char.gd
-res://hammer.gd
 res://armasOBJ/hammer.tscn
-res://char2.tscn
+res://hammer.gd
+res://sword.gd
+res://weaponbase.gd

@@ -1,7 +1,7 @@
 class_name Weapon
 extends Area2D
 
-@export var damage: int = 1
+@export var damage: float = 1
 var owner_ball: CharacterBody2D = null
 
 

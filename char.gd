@@ -5,7 +5,7 @@ const ACCELERATION = 1500.0
 const FRICTION = 2000.0
 const BOUNCE_FORCE = 1
 const BALL_RADIUS = 32.0
-const MAX_HEALTH = 500
+const MAX_HEALTH = 200
 
 static var used_hues: Array[float] = []
 const MIN_HUE_DISTANCE = 0.15
