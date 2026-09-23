@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bjset3grehuqm"]
+
+[ext_resource type="Script" uid="uid://c7le07q0kbwwy" path="res://player_2.gd" id="1_lb823"]
+[ext_resource type="Texture2D" uid="uid://b474q68p7af3s" path="res://bola_branca.svg" id="2_8kdv6"]
+[ext_resource type="PackedScene" uid="uid://bdnsj85m5647n" path="res://weaponholder.tscn" id="3_8kdv6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8xiah"]
+radius = 52.34501
+
+[node name="Player_2" type="CharacterBody2D" unique_id=1606455018]
+script = ExtResource("1_lb823")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1441893502]
+position = Vector2(7.6293945e-06, 3.8146973e-06)
+scale = Vector2(0.32375, 0.32812503)
+texture = ExtResource("2_8kdv6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=804269988]
+shape = SubResource("CircleShape2D_8xiah")
+
+[node name="Label" type="Label" parent="." unique_id=773531019]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
+[node name="WeaponHolder" parent="." unique_id=439834329 instance=ExtResource("3_8kdv6")]

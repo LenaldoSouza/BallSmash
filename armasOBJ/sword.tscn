@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ccil8hstfhi0m"]
+
+[ext_resource type="Script" uid="uid://cdcmkn7ybymcr" path="res://sword.gd" id="1_1s5lj"]
+[ext_resource type="Texture2D" uid="uid://dm5ffh3yswcvn" path="res://armasSVG/espada.svg" id="2_800nc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rupm"]
+size = Vector2(20, 66.5)
+
+[node name="Area2D" type="Area2D" unique_id=1830690909]
+script = ExtResource("1_1s5lj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=573354826]
+position = Vector2(0.5, -35.125)
+scale = Vector2(0.50390625, 0.4912109)
+texture = ExtResource("2_800nc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182072498]
+position = Vector2(0.5, -57.875)
+shape = SubResource("RectangleShape2D_7rupm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

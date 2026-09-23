@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://usuves2p5n4x"]
+
+[ext_resource type="Script" uid="uid://dx422uqus2hxs" path="res://saw.gd" id="1_0ch4x"]
+[ext_resource type="Texture2D" uid="uid://bp2t4t54y1q2e" path="res://armasSVG/serra.svg" id="2_fkh0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qigq"]
+size = Vector2(45.5, 79.75)
+
+[node name="Area2D" type="Area2D" unique_id=1830690909]
+script = ExtResource("1_0ch4x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=573354826]
+position = Vector2(3.8146973e-06, -48.99999)
+rotation = -1.5707964
+scale = Vector2(0.50390625, 0.4912109)
+texture = ExtResource("2_fkh0n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182072498]
+position = Vector2(-5.75, -62.875)
+shape = SubResource("RectangleShape2D_8qigq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

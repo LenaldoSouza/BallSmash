@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://8rdnlkqu31v0"]
+
+[ext_resource type="Script" uid="uid://b2llrdqvbectl" path="res://hammer.gd" id="1_op8ym"]
+[ext_resource type="Texture2D" uid="uid://c1pcs1q13pdhx" path="res://armasSVG/martelo.svg" id="2_u6mui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch32n"]
+size = Vector2(73, 27.5)
+
+[node name="Area2D" type="Area2D" unique_id=1830690909]
+script = ExtResource("1_op8ym")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=573354826]
+position = Vector2(-1.3113023e-06, -49.99999)
+scale = Vector2(0.50390625, 0.4912109)
+texture = ExtResource("2_u6mui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182072498]
+position = Vector2(3.5, -77.75)
+shape = SubResource("RectangleShape2D_ch32n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <!-- Cor controlada por uma unica variavel CSS. Padrao: branco puro. -->
+  <style>
+    :root { --ball-color: #ffffff; }
+    #bola { fill: var(--ball-color, #ffffff); }
+  </style>
+
+  <defs>
+    <!-- Sombra neutra: transparente no centro, cinza leve apenas na borda -->
+    <radialGradient id="sombra" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="89%" stop-color="#000000" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.20"/>
+    </radialGradient>
+    <!-- Brilho neutro branco, independente da cor base -->
+    <radialGradient id="brilho" cx="35%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base: cor da bola -->
+  <circle id="bola" cx="100" cy="100" r="80" fill="#ffffff"
+          stroke="#d8d8d8" stroke-width="1.5"/>
+
+  <!-- Sombra de borda neutra, funciona sobre qualquer cor -->
+  <circle cx="100" cy="100" r="80" fill="url(#sombra)"/>
+
+  <!-- Brilho neutro -->
+  <ellipse cx="72" cy="66" rx="26" ry="17" fill="url(#brilho)"
+           transform="rotate(-35 72 66)"/>
+</svg>

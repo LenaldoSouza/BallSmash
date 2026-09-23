@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b3omvswghrxu"]
+
+[sub_resource type="GDScript" id="GDScript_dmifc"]
+script/source = "extends Node2D
+
+var current_weapon: Area2D = null
+var owner_ball: CharacterBody2D = null
+
+const ROTATION_SPEED = 3.0  # radianos por segundo
+
+
+func _process(delta: float) -> void:
+	rotation += ROTATION_SPEED * delta
+
+const WEAPON_SCENES: Array[PackedScene] = [
+	preload(\"res://armasOBJ/dagger.tscn\"),
+	preload(\"res://armasOBJ/sword.tscn\"),
+	preload(\"res://armasOBJ/lance.tscn\"),
+	preload(\"res://armasOBJ/sickle.tscn\"),
+	preload(\"res://armasOBJ/hammer.tscn\"),
+	preload(\"res://armasOBJ/saw.tscn\"),
+]
+
+
+func equip_weapon(weapon_scene: PackedScene) -> void:
+	if current_weapon:
+		current_weapon.queue_free()
+		current_weapon = null
+
+	current_weapon = weapon_scene.instantiate()
+	add_child(current_weapon)
+	current_weapon.owner_ball = owner_ball
+
+
+func equip_random_weapon() -> void:
+	var random_scene: PackedScene = WEAPON_SCENES[randi() % WEAPON_SCENES.size()]
+	equip_weapon(random_scene)
+"
+
+[node name="Node2D" type="Node2D" unique_id=439834329]
+script = SubResource("GDScript_dmifc")

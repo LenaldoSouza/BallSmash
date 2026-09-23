@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bdnsj85m5647n"]
+
+[ext_resource type="Script" uid="uid://cp8wcpk8fhv4v" path="res://weaponholder.gd" id="1_xq5rd"]
+
+[node name="Node2D" type="Node2D" unique_id=439834329]
+script = ExtResource("1_xq5rd")

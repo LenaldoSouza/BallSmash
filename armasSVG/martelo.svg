@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="steelM" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef1f5"/>
+      <stop offset="0.5" stop-color="#b9c1cc"/>
+      <stop offset="1" stop-color="#838d9b"/>
+    </linearGradient>
+    <linearGradient id="ironM" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b6bfcb"/>
+      <stop offset="0.5" stop-color="#8b95a3"/>
+      <stop offset="1" stop-color="#5f6977"/>
+    </linearGradient>
+    <linearGradient id="woodM" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8a5a30"/>
+      <stop offset="0.5" stop-color="#a9713f"/>
+      <stop offset="1" stop-color="#6f4522"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cabeça: bloco com ponta cônica -->
+  <polygon points="64,46 172,46 206,72 172,98 64,98"
+           fill="url(#steelM)" stroke="#5b6472" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="64" y1="72" x2="200" y2="72" stroke="#8b95a3" stroke-width="2" opacity="0.55"/>
+
+  <!-- Colar metálico -->
+  <rect x="110" y="90" width="36" height="22" rx="4"
+        fill="url(#ironM)" stroke="#5b6472" stroke-width="2"/>
+
+  <!-- Cabo -->
+  <rect x="117" y="106" width="22" height="132" rx="6"
+        fill="url(#woodM)" stroke="#5b3a1d" stroke-width="2"/>
+  <g stroke="#4d3117" stroke-width="2" opacity="0.65">
+    <line x1="117" y1="176" x2="139" y2="172"/>
+    <line x1="117" y1="190" x2="139" y2="186"/>
+    <line x1="117" y1="204" x2="139" y2="200"/>
+    <line x1="117" y1="218" x2="139" y2="214"/>
+  </g>
+
+  <!-- Base -->
+  <rect x="113" y="236" width="30" height="12" rx="4"
+        fill="url(#ironM)" stroke="#5b6472" stroke-width="2"/>
+</svg>

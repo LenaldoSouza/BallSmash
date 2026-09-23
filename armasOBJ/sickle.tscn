@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ypaqbk64j8u4"]
+
+[ext_resource type="Script" uid="uid://drucficq1da6n" path="res://sickle.gd" id="1_mx1bi"]
+[ext_resource type="Texture2D" uid="uid://bswc54wios6rg" path="res://armasSVG/foice.svg" id="2_ayqbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrjo4"]
+size = Vector2(55, 38)
+
+[node name="Area2D" type="Area2D" unique_id=1830690909]
+script = ExtResource("1_mx1bi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=573354826]
+position = Vector2(-8.999999, -47)
+scale = Vector2(0.50390625, 0.4912109)
+texture = ExtResource("2_ayqbv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=182072498]
+position = Vector2(8.5, -66)
+shape = SubResource("RectangleShape2D_rrjo4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
